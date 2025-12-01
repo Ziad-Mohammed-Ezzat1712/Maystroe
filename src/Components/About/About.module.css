@@ -1,0 +1,27 @@
+.srcAbout{ 
+background-image: url(../../assets/images/bgMenu.png);
+background-size:cover; 
+}  
+
+
+.about-wrapper {
+  background: #f38d6b; /* نفس الخلفية */
+  background-image: url("/images/burger-pattern.png"); /* الباترون */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Dots */
+.dot {
+  width: 35px;
+  height: 5px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: #e2462b;
+}

@@ -1,0 +1,11 @@
+
+.src{ 
+background-image: url(../../../public/bg.png);
+background-size:cover; 
+
+}   
+
+.srcAbout{ 
+background-image: url(../../assets/images/bgMenu.png);
+background-size:cover; 
+}  
