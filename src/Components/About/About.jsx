@@ -1,41 +1,58 @@
 import React, { useState } from "react";
 import burgerAbout1 from "../../assets/images/burgerAbout.png";
-import burgerAbout2 from "../../assets/images/burgerAbout.png";
+import burgerAbout2 from "../../assets/images/brguerBeef.png";
+import product2 from "../../assets/images/about1.png"
 import icon1 from "../../assets/images/icon1.png";
 import icon2 from "../../assets/images/icon2.png";
 import icon3 from "../../assets/images/icon3.png";
 import icon4 from "../../assets/images/icon4.png";
-
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 export default function About() {
   const [slide, setSlide] = useState(0);
-
+const ref = useRef(null);
+const isInView = useInView(ref, { once: true, margin: "-100px" });
   return (
     <div className="relative w-full h-dvh flex flex-col justify-center px-10 text-white">
       {/* Title */}
       <h2 className="text-center text-[60px] font-bold mb-2">About US</h2>
-      <p className="text-center text-[20px] mb-10">
-        Handpicked favorites that keep our customers coming back for more
+      <p className="text-left max-w-2xl mx-auto text-[20px] mb-10">
+       At Maestro Burger, we don’t just serve burgers we craft flavor that stops time.
+We started as a small food truck with a big dream, and grew into a brand built on quality, passion, and unforgettable taste.
+Every burger is handcrafted with fresh ingredients, premium beef, and signature sauces that elevate every bite.
+Our mission is simple: deliver a burger experience that makes you forget the world. 
+Maestro Burger is where great food meets great vibes.
       </p>
 
       {/* Slider Content */}
       <div className="flex justify-around items-center">
         {/* Slide 0 - Image + Text */}
         {slide === 0 && (
-          <>
-            <div className="max-w-md">
-              <h3 className="text-[60px] font-bold leading-snug">
-                We Are The Best Restaurant In Egypt
-              </h3>
-              <p className="mt-4 text-[35px]">We start in 1990</p>
-            </div>
-            <img
-              src={burgerAbout1}
-              alt="burger1"
-              className="w-[408px] h-[545px] object-cover drop-shadow-xl"
-            />
-          </>
-        )}
+  <>
+    {/* النص يدخل من الشمال */}
+    <motion.div ref={ref}
+      className="max-w-md"
+      initial={{ x: -250, opacity: 0 }}
+    animate={isInView ? { x: 0, opacity: 1 } : {}}
+      transition={{ duration: 1.2, ease: "easeOut" }}
+    >
+      <h3 className="text-[60px] font-bold leading-snug">
+        We Are The Best Restaurant In Egypt
+      </h3>
+      <p className="mt-4 text-[35px]">We start in 1990</p>
+    </motion.div>
 
+    {/* الصورة تدخل من اليمين */}
+    <motion.img ref={ref}
+      src={burgerAbout1}
+      alt="burger1"
+      className="w-[408px] h-[545px] object-cover drop-shadow-xl"
+      initial={{ x: 250, opacity: 0 }}
+     animate={isInView ? { x: 0, opacity: 1 } : {}}
+      transition={{ duration: 1.2, ease: "easeOut" }}
+    />
+  </>
+)}
         {/* Slide 1 - 3 Cards Centered, No Text */}
         {slide === 1 && (
           <div className="flex justify-center gap-6 w-full">

@@ -9,17 +9,18 @@ export default function Home() {
   return (
    <>  
    <ScrollToHash/>
+   
       <div
         id="header"
-        className={`${style.src}  relative w-full  h-auto pb-56 bg-center text-white`}
+        className={` relative w-full  h-auto pb-56 bg-center text-white`}
       >
         <Navebar   />
         <Header />
       </div>
-     <section  id='menu' className={`${style.srcAbout}  relative w-full h-auto pb-56 bg-center text-white`}>
+     <section  id='menu' className={`  relative w-full h-auto pb-56 bg-center text-white`}>
        <Menu/>
      </section>
-     <section  id='about' className={`${style.srcAbout}  relative w-full h-auto pb-56 bg-center text-white`}>
+     <section  id='about' className={`  relative w-full h-auto pb-56 bg-center text-white`}>
        <About/>
      </section>
    </>
