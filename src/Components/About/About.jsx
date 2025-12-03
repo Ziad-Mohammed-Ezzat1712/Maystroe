@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import burgerAbout1 from "../../assets/images/burgerAbout.png";
 import burgerAbout2 from "../../assets/images/brguerBeef.png";
 import product2 from "../../assets/images/about1.png"
-import icon1 from "../../assets/images/icon1.png";
-import icon2 from "../../assets/images/icon2.png";
-import icon3 from "../../assets/images/icon3.png";
-import icon4 from "../../assets/images/icon4.png";
+import icon1 from "../../assets/images/Icon1.png";
+import icon2 from "../../assets/images/Icon2.png";
+import icon3 from "../../assets/images/Icon3.png";
+import icon4 from "../../assets/images/Icon4.png";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 export default function About() {
