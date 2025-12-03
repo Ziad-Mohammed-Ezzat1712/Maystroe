@@ -8,8 +8,8 @@ import combo1 from "../../assets/images/combo1.png"
 import combo2 from "../../assets/images/combo2.png"
 import combo3 from "../../assets/images/combo3.png"
 import fries from "../../assets/images/fries.png"
-import menu from "../../assets/images/menu.jpg"
-import menu2 from "../../assets/images/menu2.jpg"
+import menu from "../../assets/images/menu.JPG"
+import menu2 from "../../assets/images/menu2.JPG"
 
 import { Download,Loader2   } from "lucide-react";
 
