@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../public/logo.png';
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart,Phone } from "lucide-react";
 export default function Navebar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -44,7 +44,7 @@ export default function Navebar() {
           {/*  Order Now Button */}
           <div className="hidden md:block">
             <Link to="/conectus"><button  className=" flex gap-3 py-3  cursor-pointer hover:bg-transparent hover:shadow-sm   text-white font-bold text-lg px-6 rounded-2xl shadow-md transition" style={{ background: "linear-gradient(90deg, #EB1508 0%, #F44401 100%)" }}>
-                <ShoppingCart/>  Order Now
+                <Phone/>  Contact Us
             </button></Link>
           </div>
 

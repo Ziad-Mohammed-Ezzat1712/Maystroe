@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../../assets/images/hero1.png"; // حط مسار اللوجو عندك
 import {
   FaFacebookF,
-  FaTwitter,
+  FaTiktok,
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa";
@@ -19,17 +19,15 @@ export default function Footer() {
             We provide the best digital solutions for your business.
           </p>
           <div className="flex gap-4 text-lg text-gray-200">
-            <Link to="#">
+            <Link target="_blank" to="https://www.facebook.com/maestroburgeregy">
               <FaFacebookF />
             </Link>
-            <Link to="#">
-              <FaTwitter />
-            </Link>
-            <Link to="#">
+            
+            <Link target="_blank" to="https://www.instagram.com/maestroburger_eg?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
               <FaInstagram />
             </Link>
-            <Link to="#">
-              <FaLinkedinIn />
+            <Link target="_blank"  to="https://www.tiktok.com/@maestroburger_eg?_r=1&_t=ZS-91uzTkge4NI">
+              <FaTiktok />
             </Link>
           </div>
         </div>

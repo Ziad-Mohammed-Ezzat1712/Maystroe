@@ -132,10 +132,10 @@ export default function About() {
                     className="bg-[#EC1B07] rounded-2xl h-24 py-4 px-4"
                   />
                   <h1 className="text-white text-[20px] font-bold mt-3">
-                    Premium Beef
+                    Fresh Produce
                   </h1>
                   <p className="text-[#99A1AF] text-[16px] text-center px-12 mt-2">
-                    100% grass-fed Angus beef, never frozen
+                    Locally sourced vegetables delivered daily
                   </p>
                 </motion.div>
 
@@ -153,10 +153,10 @@ export default function About() {
                     className="bg-[#EC1B07] rounded-2xl h-24 py-4 px-4"
                   />
                   <h1 className="text-white text-[20px] font-bold mt-3">
-                    Premium Beef
+                   Artisan Buns
                   </h1>
                   <p className="text-[#99A1AF] text-[16px] text-center px-12 mt-2">
-                    100% grass-fed Angus beef, never frozen
+                   Handcrafted brioche buns baked fresh every morning
                   </p>
                 </motion.div>
 
@@ -174,10 +174,10 @@ export default function About() {
                     className="bg-[#EC1B07] rounded-2xl h-24 py-4 px-4"
                   />
                   <h1 className="text-white text-[20px] font-bold mt-3">
-                    Premium Beef
+                    Secret Sauce
                   </h1>
                   <p className="text-[#99A1AF] text-[16px] text-center px-12 mt-2">
-                    100% grass-fed Angus beef, never frozen
+                   Our signature sauce recipe perfected over 10 years
                   </p>
                 </motion.div>
               </div>

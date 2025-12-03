@@ -3,7 +3,7 @@ import { motion, useAnimation, useInView, useScroll, useTransform } from "framer
 import heroImg from "../../assets/images/hero1.png";
 import burgerup from "../../assets/images/burgerup.webp";
 import burgerdown from "../../assets/images/burgerdown.webp";
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart,Phone ,BookOpen  } from "lucide-react";
 
 export default function Header() {
   const ref = useRef(null);
@@ -50,14 +50,20 @@ export default function Header() {
     <div className="flex gap-28 my-4">
   {/* الزر الأول يدخل من اليمين */}
   <motion.button
-    initial={{ x: 250, opacity: 0 }}
-    animate={controls2}
-    transition={{ duration: 1.2, ease: "easeOut" }}
-    className="px-2 py-2 rounded-2xl cursor-pointer flex gap-3"
-    style={{ background: "linear-gradient(90deg, #EB1508 0%, #F44401 100%)" ,opacity: heroOpacityScroll }}
-  >
-    <ShoppingCart /> view menu
-  </motion.button>
+  initial={{ x: 250, opacity: 0 }}
+  animate={controls2}
+  transition={{ duration: 1.2, ease: "easeOut" }}
+  className="px-2 py-2 rounded-2xl cursor-pointer flex gap-3"
+  style={{ background: "linear-gradient(90deg, #EB1508 0%, #F44401 100%)", opacity: heroOpacityScroll }}
+  onClick={() => {
+    document.getElementById("menu").scrollIntoView({
+      behavior: "smooth",
+    });
+  }}
+>
+  <BookOpen /> view menu
+</motion.button>
+
 
   {/* الزر الثاني يدخل من الشمال */}
   <motion.button
@@ -65,9 +71,15 @@ export default function Header() {
     animate={controls3}
     transition={{ duration: 1.2, ease: "easeOut" }}
     style={{ opacity: heroOpacityScroll }}
+      onClick={() => {
+    document.getElementById("menu").scrollIntoView({
+      behavior: "smooth",
+    });
+  }}
     className="px-2 py-2 flex gap-3 cursor-pointer rounded-2xl bg-white text-black"
   >
-    <ShoppingCart /> view menu
+    
+    <Phone />Contact Us
   </motion.button>
 </div>
 
