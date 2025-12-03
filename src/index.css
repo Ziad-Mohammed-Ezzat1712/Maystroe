@@ -12,7 +12,7 @@ body, #root {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-image: url('/bgMenu.png');
+  background-image: url('/bgMenu.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

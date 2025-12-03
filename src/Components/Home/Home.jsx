@@ -5,6 +5,8 @@ import Header from '../Header/Header';
 import Menu from '../Menu/Menu';
 import ScrollToHash from "../ScrollToHash/ScrollToHash";
 import About from '../About/About';
+import Footer from '../Footer/Footer';
+import Reviews from '../Reviews/Reviews';
 export default function Home() {
   return (
    <>  
@@ -23,6 +25,14 @@ export default function Home() {
      <section  id='about' className={`  relative w-full h-auto pb-56 bg-center text-white`}>
        <About/>
      </section>
+
+        <section  id='reviews' className={`  relative w-full h-auto pb-56 bg-center text-white`}>
+       <Reviews/>
+     </section>
+
+     
+      <Footer/>
+    
    </>
   )
 }
