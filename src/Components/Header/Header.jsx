@@ -66,21 +66,20 @@ export default function Header() {
 
 
   {/* الزر الثاني يدخل من الشمال */}
-  <motion.button
-    initial={{ x: -250, opacity: 0 }}
-    animate={controls3}
-    transition={{ duration: 1.2, ease: "easeOut" }}
-    style={{ opacity: heroOpacityScroll }}
-      onClick={() => {
-    document.getElementById("menu").scrollIntoView({
-      behavior: "smooth",
-    });
+<motion.button
+  initial={{ x: -250, opacity: 0 }}
+  animate={controls3}
+  transition={{ duration: 1.2, ease: "easeOut" }}
+  style={{ opacity: heroOpacityScroll }}
+  onClick={() => {
+    window.open("https://m.me/maestroburgeregy", "_blank");
   }}
-    className="px-2 py-2 flex gap-3 cursor-pointer rounded-2xl bg-white text-black"
-  >
-    
-    <Phone />Contact Us
-  </motion.button>
+  className="px-2 py-2 flex gap-3 cursor-pointer rounded-2xl bg-white text-black"
+>
+  <Phone />
+  Contact Us
+</motion.button>
+
 </div>
 
       {/* الصور المتحركة أثناء scroll */}

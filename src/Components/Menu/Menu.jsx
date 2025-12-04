@@ -108,13 +108,16 @@ export default function Menu() {
               <span className="absolute top-3 right-6 bg-orange-500 text-[16px] px-4 py-1 rounded-full font-normal z-50">
                 offer
               </span>
-              <div className=" absolute bg-black/30 h-[68%] w-[93.5%] rounded-t-xl"></div>
-              <img
-                src={p.img}
-                alt="burger"
-                className="w-full h-full bg-[#111] rounded-t-xl object-contain"
-              />
+              <div className="relative w-full h-full">
+  <img
+    src={p.img}
+    alt="burger"
+    className="w-full h-full object-cover rounded-t-xl"
+  />
 
+  {/* الـ layer مربوط بالصورة لأنها داخل نفس الـ relative */}
+  <div className="absolute inset-0 bg-black/30 rounded-t-xl"></div>
+</div>
               <div className="p-4 bg-[#111] rounded-b-2xl">
                 <div className="flex items-center ml-auto bg-[#2a2727] w-18 px-4 py-2 rounded-xl gap-2 text-sm mb-2">
                   <FaStar className="text-yellow-400" /> {p.rating}

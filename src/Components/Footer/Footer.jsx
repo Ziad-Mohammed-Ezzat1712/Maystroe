@@ -11,12 +11,13 @@ import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="w-full py-10 px-6 md:px-20 bg-white/10 backdrop-blur-md text-white">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10">
+      <div className="max-w-[1500px] mx-auto flex flex-col md:flex-row justify-between gap-10">
         {/* Logo & Info */}
         <div className="flex flex-col gap-4">
           <img src={logo} alt="Logo" className="w-42" />
-          <p className="text-gray-200 text-lg">
-            We provide the best digital solutions for your business.
+          <p className="text-gray-200 text-md">
+           At Maestro Burger, we don’t just serve burgers we craft flavor that stops time.
+
           </p>
           <div className="flex gap-4 text-lg text-gray-200">
             <Link target="_blank" to="https://www.facebook.com/maestroburgeregy">

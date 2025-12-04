@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../public/logo.png';
-import { ShoppingCart,Phone } from "lucide-react";
+import { ShoppingCart,Phone,ForkKnife   } from "lucide-react";
+
 export default function Navebar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -43,8 +44,8 @@ export default function Navebar() {
 
           {/*  Order Now Button */}
           <div className="hidden md:block">
-            <Link to="/conectus"><button  className=" flex gap-3 py-3  cursor-pointer hover:bg-transparent hover:shadow-sm   text-white font-bold text-lg px-6 rounded-2xl shadow-md transition" style={{ background: "linear-gradient(90deg, #EB1508 0%, #F44401 100%)" }}>
-                <Phone/>  Contact Us
+            <Link target='_blank' to="https://www.orderfast.com/en/meastroburger?fbclid=IwY2xjawOeN0pleHRuA2FlbQIxMABicmlkETE5SkhFeVM1d1hUVHpZazNBc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvALLRVcrs6CGpzjqt9xNR1zCT98wZFsjpGN5ONlnhYx0R2pHFFlnuxCklQn_aem_H_Htq6OA8ufcULWv4WXWrA"><button  className=" flex gap-3 py-3  cursor-pointer hover:bg-transparent hover:shadow-sm   text-white font-bold text-lg px-6 rounded-2xl shadow-md transition" style={{ background: "linear-gradient(90deg, #EB1508 0%, #F44401 100%)" }}>
+                <ForkKnife /> Order Now
             </button></Link>
           </div>
 
