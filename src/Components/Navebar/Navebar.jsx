@@ -7,7 +7,7 @@ export default function Navebar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-      <nav className="absolute  w-full mx-auto z-20  py-4 px-4 md:px-8 lg:px-0 mt-0 ">
+      <nav className=" relative  w-full mx-auto z-20  py-4 px-4 md:px-8 lg:px-0 mt-0 ">
         <div className="max-w-screen-2xl mx-auto bg-black flex items-center justify-between py-4 px-4 md:px-8 lg:px-4 rounded-2xl">
           {/* Logo */}
           <span to="/">
@@ -70,18 +70,22 @@ export default function Navebar() {
 
         {/* Mobile menu links */}
    {isOpen && (
-  <div className="bg-black text-md pl-4 font-semibold py-3  my-2 p-[5px] mb-2  w-[200px] md:hidden rounded-lg shadow-md  space-y-1">
-    <Link to="/#header" className=" text-white hover:text-orange-500">Home</Link>
-     <Link to="/#about" className="block text-white hover:text-orange-500">About</Link>
-      <Link to="/#services" className="block text-white hover:text-orange-500"> Services</Link>
-    <Link to="/#portfolio" className="block text-white hover:text-orange-500">Portfolio</Link>
-    <Link to="/#testimonials" className="block text-white hover:text-orange-500">Testimonials</Link>
-    <Link to="/#faqs" className="block text-white hover:text-orange-500">Q&A</Link>
-<Link to="/conectus">
-<button className="w-3/4 mx-5  bg-orange-500  hover:bg-transparent hover:text-orange-500 text-white font-semibold text-sm py-2 shadow-md rounded-full transition">
-       Order Now
-</button>
-     </Link>
+  <div className="bg-black  text-md pl-4 font-semibold py-3  my-2 p-[5px] mb-2  w-full md:hidden rounded-lg shadow-md  space-y-1">
+    <Link to="/#" className="text-white block hover:text-orange-500 font-bold">
+      Home
+    </Link>
+    <Link to="/#menu" className="text-white block hover:text-orange-500 font-bold">
+      Menu
+    </Link> 
+    <Link to="/#about" className="text-white block hover:text-orange-500">
+      About
+    </Link>
+    <Link to="/#reviews" className="text-white block hover:text-orange-500">
+       Reviews
+    </Link>
+<Link target='_blank' to="https://www.orderfast.com/en/meastroburger?fbclid=IwY2xjawOeN0pleHRuA2FlbQIxMABicmlkETE5SkhFeVM1d1hUVHpZazNBc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvALLRVcrs6CGpzjqt9xNR1zCT98wZFsjpGN5ONlnhYx0R2pHFFlnuxCklQn_aem_H_Htq6OA8ufcULWv4WXWrA"><button  className=" flex gap-3 py-2  cursor-pointer hover:bg-transparent hover:shadow-sm   text-white font-bold text-md px-3 rounded-xl shadow-md transition" style={{ background: "linear-gradient(90deg, #EB1508 0%, #F44401 100%)" }}>
+                <ForkKnife size={24} /> Order Now
+            </button></Link>
   </div>
 )}
 

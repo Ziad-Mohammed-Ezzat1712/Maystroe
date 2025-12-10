@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/images/hero1.png"; // حط مسار اللوجو عندك
+import logo from '../../../public/logo.png';
 import {
   FaFacebookF,
   FaTiktok,

@@ -33,3 +33,15 @@ body, #root {
 .font-sansation {
   font-family: 'Sansation', sans-serif;
 }
+
+
+/* لون الدوت العادي */
+.mobile-reviews .slick-dots li button .dot {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* لون الدوت اللي واقف عليها */
+.mobile-reviews .slick-dots li.slick-active button .dot {
+  background: #E2462B !important;
+  width: 20px !important;
+}

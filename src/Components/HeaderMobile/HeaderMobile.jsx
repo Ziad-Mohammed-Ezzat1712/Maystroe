@@ -5,22 +5,22 @@ import burgerup from "../../assets/images/burgerup.webp";
 import burgerdown from "../../assets/images/burgerdown.webp";
 import { ShoppingCart,Phone ,BookOpen  } from "lucide-react";
 
-export default function Header() {
+export default function HeaderMobile() {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.1 });
   const controls = useAnimation();
   const controls2 = useAnimation();
   const controls3 = useAnimation();
 
-  // Scroll
+  
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   const heroOpacityScroll = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const upY = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const upY = useTransform(scrollYProgress, [0, 1], [0, -800]);
   const upOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const downY = useTransform(scrollYProgress, [0, 1], [0,300]);
   const downOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
-  // Initial animation عند ظهور الكومبوننت
+  
   useEffect(() => {
     if (isInView) {
       controls.start({ y: 0, opacity: 1 });
@@ -34,26 +34,26 @@ export default function Header() {
   }, [isInView, controls,controls2]);
 
   return (
-    <div ref={ref} className="relative z-10 flex flex-col justify-center items-center h-[1000px] text-center px-4 pt-2" >
+    <div ref={ref} className="relative z-10 flex flex-col justify-start pt-10 items-center h-[1000px] text-center px-4 ">
       
-      {/* الصورة الرئيسية */}
+
       <motion.img
         src={heroImg}
         alt="hero"
-        className="w-[379px] h-[170px] mt-16"
+        className="w-[200px] h-[100px] "
         initial={{ y: -250, opacity: 0 }}
         animate={controls}
         style={{ opacity: heroOpacityScroll }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       />
 
-    <div className="flex gap-28 my-4">
-  {/* الزر الأول يدخل من اليمين */}
+    <div className="flex gap-10 my-10">
+
   <motion.button
   initial={{ x: 250, opacity: 0 }}
   animate={controls2}
   transition={{ duration: 1.2, ease: "easeOut" }}
-  className="px-2 py-2 rounded-2xl cursor-pointer flex gap-3"
+  className="px-4 py-2 rounded-2xl cursor-pointer flex gap-3"
   style={{ background: "linear-gradient(90deg, #EB1508 0%, #F44401 100%)", opacity: heroOpacityScroll }}
   onClick={() => {
     document.getElementById("menu").scrollIntoView({
@@ -65,7 +65,6 @@ export default function Header() {
 </motion.button>
 
 
-  {/* الزر الثاني يدخل من الشمال */}
 <motion.button
   initial={{ x: -250, opacity: 0 }}
   animate={controls3}
@@ -74,7 +73,7 @@ export default function Header() {
   onClick={() => {
     window.open("https://m.me/maestroburgeregy", "_blank");
   }}
-  className="px-2 py-2 flex gap-3 cursor-pointer rounded-2xl bg-white text-black"
+  className="px-4 py-2 flex gap-3 cursor-pointer rounded-2xl bg-white text-black"
 >
   <Phone />
   Contact Us
@@ -85,7 +84,7 @@ export default function Header() {
       {/* الصور المتحركة أثناء scroll */}
       <motion.img
         src={burgerup}
-        className="h-[312px] mt-7"
+        className="h-[212px] mt-7"
         initial={{ y: 250, opacity: 0 }}
         animate={controls}
         style={{ y: upY, opacity: upOpacity }}
@@ -93,7 +92,7 @@ export default function Header() {
       />
       <motion.img
         src={burgerdown}
-        className="h-[312px]"
+        className="h-[212px]"
         initial={{ y: 250, opacity: 0 }}
         animate={controls}
         style={{ y: downY, opacity: downOpacity }}
@@ -102,3 +101,4 @@ export default function Header() {
     </div>
   );
 }
+

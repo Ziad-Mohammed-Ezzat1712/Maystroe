@@ -24,8 +24,11 @@ const OrderButton = () => {
         ${isTouched ? 'bg-[#F44401] pr-5' : ''}
       `}
     >
-     <div className='bg-white  rounded-full px-3 py-3 group-hover:bg-transparent '>
+     <div className='bg-white  md:block hidden rounded-full px-3 py-3 group-hover:bg-transparent '>
        <ShoppingCart    size={48} className='text-[#F44401] hover:text-white group-hover:text-white  '/>
+     </div>
+      <div className='bg-white  block md:hidden  rounded-full px-2 py-2 group-hover:bg-transparent '>
+       <ShoppingCart    size={24} className='text-[#F44401] hover:text-white group-hover:text-white  '/>
      </div>
       <span
         className={`

@@ -75,7 +75,7 @@ export default function About() {
                   alt={`Card ${i}`}
                   className="w-full h-full object-cover transition-transform duration-500"
                 />
-                <div className="absolute  inset-0 bg-linear-to-b from-[#EB1508] to-[#F44401] transition-all duration-500 hover:rotate-35 hover:translate-y-60 flex items-center justify-center text-center">
+                <div className="absolute  inset-0 bg-linear-to-b from-[#EB1508] to-[#F44401] transition-all duration-500 hover:rotate-35 hover:translate-y-100 flex items-center justify-center text-center">
                   <div className="flex flex-col items-center justify-center">
                     <h1 className="text-white text-[35px] font-bold">
                       Hardrouck

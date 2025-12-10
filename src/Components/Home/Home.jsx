@@ -7,27 +7,50 @@ import ScrollToHash from "../ScrollToHash/ScrollToHash";
 import About from '../About/About';
 import Footer from '../Footer/Footer';
 import Reviews from '../Reviews/Reviews';
+import MenuMobile from '../MenuMobile/MenuMobile';
+import HeaderMobile from '../HeaderMobile/HeaderMobile';
+import AboutMobile from '../AboutMobile/AboutMobile';
+import ReviewsMobile from '../ReviewsMobile/ReviewsMobile';
 export default function Home() {
   return (
    <>  
    <ScrollToHash/>
-   
+   <Navebar   />
       <div
         id="header"
-        className={` relative w-full  h-auto pb-56 bg-center text-white`}
+        className={` hidden md:block relative w-full  h-auto  bg-center text-white`}
       >
-        <Navebar   />
+     
         <Header />
       </div>
-     <section  id='menu' className={`  relative w-full h-auto pb-56 bg-center text-white`}>
+      <div
+        id="header"
+        className={` md:hidden block relative w-full  h-auto  bg-center text-white`}
+      >
+      
+        <HeaderMobile />
+      </div>
+   
+     <section  id='menu' className="hidden md:block relative w-full h-auto pb-56 bg-center text-white" >
        <Menu/>
      </section>
-     <section  id='about' className={`  relative w-full h-auto pb-56 bg-center text-white`}>
+     <section  id='menu' className="md:hidden block relative w-full h-auto pb-56 bg-center text-white">
+       <MenuMobile/>
+     </section>
+     <section  id='about' className={` hidden md:block relative w-full h-auto pb-56 bg-center text-white`}>
        <About/>
      </section>
+<section  id='about' className={` md:hidden block relative w-full h-auto pb-56 bg-center text-white`}>
+       <AboutMobile/>
+     </section>
 
-        <section  id='reviews' className={`  relative w-full h-auto pb-56 bg-center text-white`}>
+     
+
+        <section  id='reviews' className={`  hidden md:block relative w-full h-auto pb-56 bg-center text-white`}>
        <Reviews/>
+     </section>
+  <section  id='reviews' className={` md:hidden block relative w-full h-auto pb-56 bg-center text-white`}>
+       <ReviewsMobile/>
      </section>
 
      

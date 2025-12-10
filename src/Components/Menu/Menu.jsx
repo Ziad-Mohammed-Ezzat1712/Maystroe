@@ -10,16 +10,15 @@ import combo3 from "../../assets/images/combo3.png";
 import fries from "../../assets/images/fries.png";
 import menu from "../../assets/images/menu.JPG";
 import menu2 from "../../assets/images/menu2.JPG";
-
 import { Download, Loader2 } from "lucide-react";
 
 export default function Menu() {
   const [loading, setLoading] = useState(false);
+
   const handleDownload = async () => {
     if (loading) return; // منع التكرار
     setLoading(true);
     try {
-      // رابط ملف PDF
       const pdfUrl = "/MaestroMenu.pdf"; // غيّره حسب مكان الملف
 
       const link = document.createElement("a");
@@ -36,88 +35,49 @@ export default function Menu() {
   };
 
   const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 3 } },
-      { breakpoint: 768, settings: { slidesToShow: 2 } },
-      { breakpoint: 480, settings: { slidesToShow: 1 } },
-    ],
-  };
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  responsive: [
+    { breakpoint: 1024, settings: { slidesToShow: 3 } }, // md
+    { breakpoint: 768, settings: { slidesToShow: 2 } },  // sm
+    { breakpoint: 640, settings: { slidesToShow: 2 } },  // small mobile
+    { breakpoint: 480, settings: { slidesToShow: 1 } },  // xs
+  ],
+};
+
 
   const products = [
-    {
-      name: "The Signature",
-      desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions",
-      price: "16.99EG",
-      rating: 4.9,
-      img: product1,
-    },
-    {
-      name: "Smoky BBQ",
-      desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions",
-      price: "14.50EG",
-      rating: 4.7,
-      img: product2,
-    },
-    {
-      name: "Spicy Inferno",
-      desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions",
-      price: "18.00EG",
-      rating: 4.8,
-      img: combo1,
-    },
-    {
-      name: "Classic Burger",
-      desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions",
-      price: "12.99EG",
-      rating: 4.5,
-      img: combo2,
-    },
-    {
-      name: "Cheese Burst",
-      desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions",
-      price: "15.25EG",
-      rating: 4.6,
-      img: combo3,
-    },
-    {
-      name: "Double Trouble",
-      desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions",
-      price: "19.99EG",
-      rating: 4.9,
-      img: fries,
-    },
+    { name: "The Signature", desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions", price: "16.99EG", rating: 4.9, img: product1 },
+    { name: "Smoky BBQ", desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions", price: "14.50EG", rating: 4.7, img: product2 },
+    { name: "Spicy Inferno", desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions", price: "18.00EG", rating: 4.8, img: combo1 },
+    { name: "Classic Burger", desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions", price: "12.99EG", rating: 4.5, img: combo2 },
+    { name: "Cheese Burst", desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions", price: "15.25EG", rating: 4.6, img: combo3 },
+    { name: "Double Trouble", desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions", price: "19.99EG", rating: 4.9, img: fries },
   ];
 
   return (
-    <div className={` w-full pt-0 bg-center text-white`}>
+    <div className="w-full pt-0 bg-center text-white">
       <h1 className="text-5xl font-extrabold text-center mb-10">OUR MENU</h1>
 
-
-      <div className="overflow-hidden  px-10">
+      {/* Slider */}
+      <div className="overflow-hidden px-4 md:px-10">
         <Slider {...settings}>
           {products.map((p, i) => (
-            <div
-              key={i}
-              className=" rounded-xl  overflow-hidden  px-3 mx-3 relative"
-            >
+            <div key={i} className="rounded-xl overflow-hidden px-3 mx-3 relative">
               <span className="absolute top-3 right-6 bg-orange-500 text-[16px] px-4 py-1 rounded-full font-normal z-50">
                 offer
               </span>
               <div className="relative w-full h-full">
-  <img
-    src={p.img}
-    alt="burger"
-    className="w-full h-full object-cover rounded-t-xl"
-  />
-
-  {/* الـ layer مربوط بالصورة لأنها داخل نفس الـ relative */}
-  <div className="absolute inset-0 bg-black/30 rounded-t-xl"></div>
-</div>
+                <img
+                  src={p.img}
+                  alt="burger"
+                  className="w-full h-full object-cover rounded-t-xl"
+                />
+                <div className="absolute inset-0 bg-black/30 rounded-t-xl"></div>
+              </div>
               <div className="p-4 bg-[#111] rounded-b-2xl">
                 <div className="flex items-center ml-auto bg-[#2a2727] w-18 px-4 py-2 rounded-xl gap-2 text-sm mb-2">
                   <FaStar className="text-yellow-400" /> {p.rating}
@@ -134,18 +94,22 @@ export default function Menu() {
           ))}
         </Slider>
       </div>
-      <div className="flex justify-center mt-12 px-15  gap-4">
+
+      {/* Menu Images */}
+      <div className="flex flex-col md:flex-row justify-center mt-12 px-4 md:px-15 gap-4">
         <img
           src={menu}
-          alt="burger"
-          className="w-[50%] h-[50%] bg-[#111] rounded-xl object-contain"
+          alt="menu"
+          className="w-full md:w-[50%] bg-[#111] rounded-xl object-contain"
         />
         <img
           src={menu2}
-          alt="burger"
-          className="w-[50%] h-[50%] bg-[#111] rounded-xl object-contain"
+          alt="menu"
+          className="w-full md:w-[50%] bg-[#111] rounded-xl object-contain"
         />
       </div>
+
+      {/* Download Button */}
       <div className="flex justify-center mt-12">
         <button
           onClick={handleDownload}
