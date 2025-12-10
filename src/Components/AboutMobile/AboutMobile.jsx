@@ -111,69 +111,67 @@ export default function AboutMobile() {
 
         {/* ---------------- Slide 2 (Icons + Stats) ---------------- */}
         <div>
-          <div className="flex flex-col items-center gap-6">
-            {/* ICON ROW */}
-            {[
-              {
-                img: icon1,
-                title: "Premium Beef",
-                text: "100% grass-fed Angus beef",
-              },
-              {
-                img: icon2,
-                title: "Fresh Produce",
-                text: "Vegetables delivered daily",
-              },
-              {
-                img: icon3,
-                title: "Artisan Buns",
-                text: "Fresh brioche buns daily",
-              },
-              {
-                img: icon4,
-                title: "Secret Sauce",
-                text: "Perfected over 10 years",
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                className="bg-black rounded-xl p-4 flex flex-col items-center w-[230px]"
-                initial={{ y: 40, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.2, duration: 0.6 }}
-              >
-                <img
-                  src={item.img}
-                  className="w-14 h-14 bg-[#EC1B07] p-2 rounded-xl"
-                />
-                <h1 className="font-bold text-lg mt-2">{item.title}</h1>
-                <p className="text-[#99A1AF] text-sm text-center mt-1">
-                  {item.text}
-                </p>
-              </motion.div>
-            ))}
+         <div className="grid grid-cols-2 sm:grid-cols-2 gap-10 place-items-center px-4">
+    {/* ICON ROW */}
+    {[
+      { img: icon1, title: "Premium Beef", text: "100% grass-fed Angus beef" },
+      { img: icon2, title: "Fresh Produce", text: "Vegetables delivered daily" },
+      { img: icon3, title: "Artisan Buns", text: "Fresh brioche buns daily" },
+      { img: icon4, title: "Secret Sauce", text: "Perfected over 10 years" },
+    ].map((item, i) => (
+      <motion.div
+        key={i}
+        className="bg-black rounded-xl p-4 flex flex-col items-center w-[160px]"
+        initial={{ y: 40, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: i * 0.2, duration: 0.6 }}
+      >
+        <img
+          src={item.img}
+          className="w-14 h-14 bg-[#EC1B07] p-2 rounded-xl"
+        />
+        <h1 className="font-bold text-lg mt-2">{item.title}</h1>
+        <p className="text-[#99A1AF] text-sm text-center mt-1">
+          {item.text}
+        </p>
+      </motion.div>
+    ))}
 
-            {/* STATS */}
-            {[
-              { big: "100%", t1: "Premium Beef", t2: "No preservatives" },
-              { big: "Local", t1: "Farm Fresh", t2: "Support farmers" },
-              { big: "Daily", t1: "Fresh Baked", t2: "Morning buns" },
-            ].map((blk, i) => (
-              <motion.div
-                key={i}
-                className="bg-[#EE2406] rounded-xl p-6 w-[230px] text-center"
-                initial={{ y: 40, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.2 }}
-              >
-                <h1 className="text-4xl font-bold">{blk.big}</h1>
-                <h2 className="text-xl font-bold mt-2">{blk.t1}</h2>
-                <p className="text-black text-sm mt-2">{blk.t2}</p>
-              </motion.div>
-            ))}
-          </div>
+    {/* STATS */}
+    {[
+      { big: "100%", t1: "Premium Beef", t2: "No preservatives" },
+      { big: "Local", t1: "Farm Fresh", t2: "Support farmers" },
+    
+    ].map((blk, i) => (
+      <motion.div
+        key={i}
+        className="bg-[#EE2406] rounded-xl p-6 w-[160px] text-center"
+        initial={{ y: 40, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: i * 0.2 }}
+      >
+        <h1 className="text-2xl font-bold">{blk.big}</h1>
+        <h2 className="text-md font-bold mt-2">{blk.t1}</h2>
+        <p className="text-black text-sm mt-2">{blk.t2}</p>
+      </motion.div>
+    ))}
+
+    
+</div>
+  <motion.div
+    
+        className="bg-[#EE2406] rounded-xl mt-10 p-6 w-[260px] justify-center items-center mx-auto text-center"
+        initial={{ y: 40, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay:  0.8 }}
+      >
+        <h1 className="text-2xl font-bold">Daily</h1>
+        <h2 className="text-md font-bold mt-2">Fresh Baked</h2>
+        <p className="text-black text-sm mt-2">Morning buns</p>
+      </motion.div>
         </div>
       </Slider>
       </div>

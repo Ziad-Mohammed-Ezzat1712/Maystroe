@@ -63,7 +63,7 @@ export default function ReviewsMobile() {
      customPaging: (i) => (
       <div
         className={`w-10 h-1.5 rounded-md ${
-          i === slide ? "bg-[#000000]" : "bg-white/30"
+          i === slide ? "bg-[#e2462b]" : "bg-white/30"
         }`}
       ></div>
     ),
@@ -77,12 +77,12 @@ export default function ReviewsMobile() {
         Don't just take our word for it – hear from our satisfied customers
       </p>
 
-      <div className="bg-[#282523] w-full mx-auto py-6 rounded-xl">
+      <div className="bg-[#36322f] w-full mx-auto py-6 rounded-xl">
         <Slider {...sliderSettings}>
           {reviewsData.map((review) => (
             <div
               key={review.id}
-              className="bg-[#282523] text-white px-5 py-8 flex flex-col gap-4 justify-center items-center"
+              className="bg-[#36322f] text-white px-5 py-8 flex flex-col gap-4 justify-center items-center"
             >
               {/* Stars */}
               <div className="flex gap-1">
@@ -114,7 +114,7 @@ export default function ReviewsMobile() {
       </div>
 
       {/* Stats */}
-      <div className="bg-[#282523] text-white mt-8 rounded-xl p-5 flex flex-col gap-5">
+      <div className="bg-[#36322f] text-white mt-8 rounded-xl p-5 flex flex-col gap-5">
         <div className="text-center">
           <p className="text-[30px] font-bold">4.9</p>
           <div className="flex justify-center gap-1 mb-1">
