@@ -11,7 +11,11 @@ import icon4 from "../../assets/images/Icon4.png";
 
 export default function AboutMobile() {
   const [slide, setSlide] = useState(0);
+  const [activeCard, setActiveCard] = useState(null);
 
+  const toggleCard = (index) => {
+    setActiveCard(activeCard === index ? null : index);
+  };
   const settings = {
     dots: true,
     infinite: true,
@@ -80,34 +84,49 @@ export default function AboutMobile() {
         </div>
 
         {/* ---------------- Slide 1 (3 Cards) ---------------- */}
-        <div>
-          <div className="flex flex-col gap-4 items-center">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="relative w-[270px] h-[350px] rounded-xl overflow-hidden shadow-lg"
-              >
-                <img
-                  src={burgerAbout2}
-                  className="w-full h-full object-cover"
-                  alt=""
-                />
+      <div>
+  <div className="flex flex-col gap-4 items-center">
+      {[1, 2, 3].map((i, idx) => (
+        <div
+          key={i}
+          onClick={() => toggleCard(idx)}
+          className="relative w-[270px] h-[350px] rounded-xl overflow-hidden shadow-lg cursor-pointer"
+        >
+          <img
+            src={burgerAbout2}
+            className="w-full h-full object-cover"
+            alt=""
+          />
 
-                <div className="absolute inset-0 bg-gradient-to-b from-[#EB1508] to-[#F44401] opacity-95 flex items-center justify-center text-center p-4 transition-all duration-500 hover:rotate-35 hover:translate-y-60">
-                  <div>
-                    <h1 className="text-2xl font-bold">Hardrouck</h1>
-                    <h1 className="text-2xl font-bold">Burger</h1>
+          <div
+            className={`
+              absolute inset-0
+              bg-gradient-to-b from-[#EB1508] to-[#F44401]
+              opacity-95
+              flex items-center justify-center text-center p-4
+              transition-all duration-500 ease-in-out
 
-                    <p className="text-sm mt-2 px-4">
-                      Lettuce Tomato Ketchup Mayonnaise Pickles 150g Beef Burger
-                      Sesame Bun
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
+              ${
+                activeCard === idx
+                  ? "rotate-[35deg] translate-y-60"
+                  : "rotate-0 translate-y-0"
+              }
+            `}
+          >
+            <div>
+              <h1 className="text-2xl font-bold">Hardrouck</h1>
+              <h1 className="text-2xl font-bold">Burger</h1>
+
+              <p className="text-sm mt-2 px-4">
+                Lettuce Tomato Ketchup Mayonnaise Pickles 150g Beef Burger
+                Sesame Bun
+              </p>
+            </div>
           </div>
         </div>
+      ))}
+    </div>
+</div>
 
         {/* ---------------- Slide 2 (Icons + Stats) ---------------- */}
         <div>
