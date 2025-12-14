@@ -2,8 +2,10 @@ import React, { useRef, useEffect } from "react";
 import { motion, useAnimation, useInView, useScroll, useTransform } from "framer-motion";
 import heroImg from "../../assets/images/hero1.png";
 import burgerup from "../../assets/images/burgerup.webp";
+import heroVideo from "../../assets/images/video.mp4"; // استيراد الفيديو
 import burgerdown from "../../assets/images/burgerdown.webp";
 import { ShoppingCart,Phone ,BookOpen  } from "lucide-react";
+import { FaFacebookMessenger } from "react-icons/fa";
 
 export default function HeaderMobile() {
   const ref = useRef(null);
@@ -51,12 +53,13 @@ export default function HeaderMobile() {
 
   <motion.button
   initial={{ x: 250, opacity: 0 }}
+  
   animate={controls2}
   transition={{ duration: 1.2, ease: "easeOut" }}
   className="px-4 py-2 rounded-2xl cursor-pointer flex gap-3"
   style={{ background: "linear-gradient(90deg, #EB1508 0%, #F44401 100%)", opacity: heroOpacityScroll }}
   onClick={() => {
-    document.getElementById("menu").scrollIntoView({
+    document.getElementById("menumobile").scrollIntoView({
       behavior: "smooth",
     });
   }}
@@ -75,27 +78,24 @@ export default function HeaderMobile() {
   }}
   className="px-4 py-2 flex gap-3 cursor-pointer rounded-2xl bg-white text-black"
 >
-  <Phone />
+  <FaFacebookMessenger size={24} className="text-black" />
+
   Contact Us
 </motion.button>
 
 </div>
 
-      {/* الصور المتحركة أثناء scroll */}
-      <motion.img
-        src={burgerup}
-        className="h-[212px] mt-7"
-        initial={{ y: 250, opacity: 0 }}
+  <motion.video
+        src={heroVideo}
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="h-[420px] w-[1500px]  rounded-2xl bg-transparent"
+        initial={{ y: 100, opacity: 0 }}
+
         animate={controls}
-        style={{ y: upY, opacity: upOpacity }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-      />
-      <motion.img
-        src={burgerdown}
-        className="h-[212px]"
-        initial={{ y: 250, opacity: 0 }}
-        animate={controls}
-        style={{ y: downY, opacity: downOpacity }}
+    
         transition={{ duration: 1.2, ease: "easeOut" }}
       />
     </div>

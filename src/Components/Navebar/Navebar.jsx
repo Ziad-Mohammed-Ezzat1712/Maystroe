@@ -74,13 +74,13 @@ export default function Navebar() {
     <Link to="/#" className="text-white block hover:text-orange-500 font-bold">
       Home
     </Link>
-    <Link to="/#menu" className="text-white block hover:text-orange-500 font-bold">
+    <Link to="/#menumobile" className="text-white block hover:text-orange-500 font-bold">
       Menu
     </Link> 
-    <Link to="/#about" className="text-white block hover:text-orange-500">
+    <Link to="/#aboutmobile" className="text-white block hover:text-orange-500">
       About
     </Link>
-    <Link to="/#reviews" className="text-white block hover:text-orange-500">
+    <Link to="/#reviewsmobile" className="text-white block hover:text-orange-500">
        Reviews
     </Link>
 <Link target='_blank' to="https://www.orderfast.com/en/meastroburger?fbclid=IwY2xjawOeN0pleHRuA2FlbQIxMABicmlkETE5SkhFeVM1d1hUVHpZazNBc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvALLRVcrs6CGpzjqt9xNR1zCT98wZFsjpGN5ONlnhYx0R2pHFFlnuxCklQn_aem_H_Htq6OA8ufcULWv4WXWrA"><button  className=" flex gap-3 py-2  cursor-pointer hover:bg-transparent hover:shadow-sm   text-white font-bold text-md px-3 rounded-xl shadow-md transition" style={{ background: "linear-gradient(90deg, #EB1508 0%, #F44401 100%)" }}>
