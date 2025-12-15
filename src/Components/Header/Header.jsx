@@ -44,10 +44,7 @@ export default function Header() {
         src={heroImg}
         alt="hero"
         className="w-[379px] h-[170px] mt-16"
-        initial={{ y: -250, opacity: 0 }}
-        animate={controls}
-        style={{ opacity: heroOpacityScroll }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
+        
       />
 
       <div className="flex gap-28 my-4">
@@ -57,7 +54,7 @@ export default function Header() {
           animate={controls2}
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="px-2 py-2 rounded-2xl cursor-pointer flex gap-3"
-          style={{ background: "linear-gradient(90deg, #EB1508 0%, #F44401 100%)", opacity: heroOpacityScroll }}
+          style={{ background: "linear-gradient(90deg, #EB1508 0%, #F44401 100%)"}}
           onClick={() => {
             document.getElementById("menu").scrollIntoView({
               behavior: "smooth",
@@ -72,7 +69,7 @@ export default function Header() {
           initial={{ x: -250, opacity: 0 }}
           animate={controls3}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          style={{ opacity: heroOpacityScroll }}
+        
           onClick={() => {
             window.open("https://m.me/maestroburgeregy", "_blank");
           }}
@@ -92,7 +89,7 @@ export default function Header() {
         playsInline
         className="h-[620px] w-[1500px] mt-7  rounded-full bg-transparent"
         initial={{ y: 100, opacity: 0 }}
-        style={{ opacity: heroOpacityScroll }}
+     
         animate={controls}
     
         transition={{ duration: 1.2, ease: "easeOut" }}

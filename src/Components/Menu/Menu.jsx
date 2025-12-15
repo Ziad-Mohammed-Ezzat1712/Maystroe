@@ -11,6 +11,9 @@ import fries from "../../assets/images/fries.png";
 import menu from "../../assets/images/menu.JPG";
 import menu2 from "../../assets/images/menu2.JPG";
 import { Download, Loader2 } from "lucide-react";
+import { Link } from "react-router-dom";
+
+import { ShoppingCart, Phone, ForkKnife } from "lucide-react";
 
 export default function Menu() {
   const [loading, setLoading] = useState(false);
@@ -35,27 +38,62 @@ export default function Menu() {
   };
 
   const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 5,
-  slidesToScroll: 1,
-  responsive: [
-    { breakpoint: 1024, settings: { slidesToShow: 3 } }, // md
-    { breakpoint: 768, settings: { slidesToShow: 2 } },  // sm
-    { breakpoint: 640, settings: { slidesToShow: 2 } },  // small mobile
-    { breakpoint: 480, settings: { slidesToShow: 1 } },  // xs
-  ],
-};
-
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 3 } }, // md
+      { breakpoint: 768, settings: { slidesToShow: 2 } }, // sm
+      { breakpoint: 640, settings: { slidesToShow: 2 } }, // small mobile
+      { breakpoint: 480, settings: { slidesToShow: 1 } }, // xs
+    ],
+  };
 
   const products = [
-    { name: "The Signature", desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions", price: "16.99EG", rating: 4.9, img: product1 },
-    { name: "Smoky BBQ", desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions", price: "14.50EG", rating: 4.7, img: product2 },
-    { name: "Spicy Inferno", desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions", price: "18.00EG", rating: 4.8, img: combo1 },
-    { name: "Classic Burger", desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions", price: "12.99EG", rating: 4.5, img: combo2 },
-    { name: "Cheese Burst", desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions", price: "15.25EG", rating: 4.6, img: combo3 },
-    { name: "Double Trouble", desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions", price: "19.99EG", rating: 4.9, img: fries },
+    {
+      name: "The Signature",
+      desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions",
+      price: "16.99EG",
+      rating: 4.9,
+      img: product1,
+    },
+    {
+      name: "Smoky BBQ",
+      desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions",
+      price: "14.50EG",
+      rating: 4.7,
+      img: product2,
+    },
+    {
+      name: "Spicy Inferno",
+      desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions",
+      price: "18.00EG",
+      rating: 4.8,
+      img: combo1,
+    },
+    {
+      name: "Classic Burger",
+      desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions",
+      price: "12.99EG",
+      rating: 4.5,
+      img: combo2,
+    },
+    {
+      name: "Cheese Burst",
+      desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions",
+      price: "15.25EG",
+      rating: 4.6,
+      img: combo3,
+    },
+    {
+      name: "Double Trouble",
+      desc: "Wagyu beef, truffle aioli, aged cheddar, caramelized onions",
+      price: "19.99EG",
+      rating: 4.9,
+      img: fries,
+    },
   ];
 
   return (
@@ -66,7 +104,10 @@ export default function Menu() {
       <div className="overflow-hidden px-4 md:px-10">
         <Slider {...settings}>
           {products.map((p, i) => (
-            <div key={i} className="rounded-xl overflow-hidden px-3 mx-3 relative">
+            <div
+              key={i}
+              className="rounded-xl overflow-hidden px-3 mx-3 relative"
+            >
               <span className="absolute top-3 right-6 bg-orange-500 text-[16px] px-4 py-1 rounded-full font-normal z-50">
                 offer
               </span>
@@ -110,11 +151,11 @@ export default function Menu() {
       </div>
 
       {/* Download Button */}
-      <div className="flex justify-center mt-12">
+      <div className="flex justify-center gap-32 mt-12">
         <button
           onClick={handleDownload}
           disabled={loading}
-          className="px-6 py-3 cursor-pointer bg-orange-600 rounded-xl font-bold shadow-md flex items-center gap-2 text-white disabled:opacity-70"
+          className="px-12 py-6 cursor-pointer text-xl bg-orange-600 rounded-xl font-bold shadow-md flex items-center gap-2 text-white disabled:opacity-70"
         >
           {loading ? (
             <>
@@ -123,11 +164,22 @@ export default function Menu() {
             </>
           ) : (
             <>
-              <Download />
+              <Download size={32} />
               Download Menu
             </>
           )}
         </button>
+        <Link
+          target="_blank"
+          to="https://www.orderfast.com/en/meastroburger?fbclid=IwY2xjawOeN0pleHRuA2FlbQIxMABicmlkETE5SkhFeVM1d1hUVHpZazNBc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvALLRVcrs6CGpzjqt9xNR1zCT98wZFsjpGN5ONlnhYx0R2pHFFlnuxCklQn_aem_H_Htq6OA8ufcULWv4WXWrA"
+        >
+          <button
+            className=" px-20 py-6 gap-4 cursor-pointer text-xl bg-orange-600 rounded-xl font-bold shadow-md flex items-center  text-white disabled:opacity-70"
+          
+          >
+            <ForkKnife size={32} /> Order Now
+          </button>
+        </Link>
       </div>
     </div>
   );

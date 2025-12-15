@@ -31,10 +31,10 @@ export default function Home() {
         <HeaderMobile />
       </div>
    
-     <section  id='menu' className="hidden md:block relative w-full h-auto pb-56 mt-20 bg-center text-white " >
+     <section  id='menu' className="hidden md:block relative w-full h-auto pb-42 mt-20 bg-center text-white " >
        <Menu/>
      </section>
-     <section  id='menumobile' className="md:hidden block relative w-full h-auto pb-56 bg-center text-white scroll-mt-32">
+     <section  id='menumobile' className="md:hidden block relative w-full h-auto pb-36 bg-center text-white scroll-mt-32">
        <MenuMobile/>
      </section>
      <section  id='about' className={` hidden md:block relative w-full h-auto pb-56 bg-center text-white`}>

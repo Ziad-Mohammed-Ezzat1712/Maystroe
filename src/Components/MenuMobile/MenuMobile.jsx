@@ -10,7 +10,8 @@ import combo3 from "../../assets/images/combo3.png";
 import fries from "../../assets/images/fries.png";
 import menu from "../../assets/images/menu.JPG";
 import menu2 from "../../assets/images/menu2.JPG";
-import { Download, Loader2 } from "lucide-react";
+import { Download, ForkKnife, Loader2 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
 export default function MenuMobile() {
@@ -109,11 +110,11 @@ export default function MenuMobile() {
       </div>
 
       {/* Download Button */}
-      <div className="flex justify-center mt-12">
+      <div className="flex justify-center gap-5 mt-12">
         <button
           onClick={handleDownload}
           disabled={loading}
-          className="px-6 py-3 cursor-pointer bg-orange-600 rounded-xl font-bold shadow-md flex items-center gap-2 text-white disabled:opacity-70"
+          className="px-4 py-3 cursor-pointer text-lg bg-orange-600 rounded-xl font-bold shadow-md flex items-center gap-2 text-white disabled:opacity-70"
         >
           {loading ? (
             <>
@@ -122,11 +123,23 @@ export default function MenuMobile() {
             </>
           ) : (
             <>
-              <Download />
+              <Download size={24} />
               Download Menu
             </>
           )}
         </button>
+
+        <Link
+                  target="_blank"
+                  to="https://www.orderfast.com/en/meastroburger?fbclid=IwY2xjawOeN0pleHRuA2FlbQIxMABicmlkETE5SkhFeVM1d1hUVHpZazNBc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvALLRVcrs6CGpzjqt9xNR1zCT98wZFsjpGN5ONlnhYx0R2pHFFlnuxCklQn_aem_H_Htq6OA8ufcULWv4WXWrA"
+                >
+                  <button
+                    className=" px-6 py-3 gap-4 cursor-pointer text-lg bg-orange-600 rounded-xl font-bold shadow-md flex items-center  text-white disabled:opacity-70"
+                  
+                  >
+                    <ForkKnife size={24} /> Order Now
+                  </button>
+                </Link>
       </div>
     </div>
   );

@@ -36,7 +36,7 @@ export default function HeaderMobile() {
   }, [isInView, controls,controls2]);
 
   return (
-    <div ref={ref} className="relative z-10 flex flex-col justify-start pt-10 items-center h-[1000px] text-center px-4 ">
+    <div ref={ref} className="relative z-10 flex flex-col justify-start pt-10 items-center h-[820px] text-center px-4 ">
       
 
       <motion.img
@@ -45,7 +45,7 @@ export default function HeaderMobile() {
         className="w-[200px] h-[100px] "
         initial={{ y: -250, opacity: 0 }}
         animate={controls}
-        style={{ opacity: heroOpacityScroll }}
+      
         transition={{ duration: 1.2, ease: "easeOut" }}
       />
 
@@ -57,7 +57,7 @@ export default function HeaderMobile() {
   animate={controls2}
   transition={{ duration: 1.2, ease: "easeOut" }}
   className="px-4 py-2 rounded-2xl cursor-pointer flex gap-3"
-  style={{ background: "linear-gradient(90deg, #EB1508 0%, #F44401 100%)", opacity: heroOpacityScroll }}
+  style={{ background: "linear-gradient(90deg, #EB1508 0%, #F44401 100%)" }}
   onClick={() => {
     document.getElementById("menumobile").scrollIntoView({
       behavior: "smooth",
@@ -72,7 +72,7 @@ export default function HeaderMobile() {
   initial={{ x: -250, opacity: 0 }}
   animate={controls3}
   transition={{ duration: 1.2, ease: "easeOut" }}
-  style={{ opacity: heroOpacityScroll }}
+
   onClick={() => {
     window.open("https://m.me/maestroburgeregy", "_blank");
   }}
