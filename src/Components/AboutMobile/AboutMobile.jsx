@@ -24,11 +24,12 @@ export default function AboutMobile() {
     slidesToScroll: 1,
     arrows: false,
     autoplay: false,
-    appendDots: (dots) => (
-      <div className="pt-6 pb-2">
+   appendDots: (dots) => (
+  <div className="absolute bottom-4 w-full flex justify-center">
     <ul className="flex justify-center gap-8">{dots}</ul>
   </div>
-    ),
+),
+
     customPaging: (i) => (
       <div
         className={`w-10 h-1.5 mt-5 rounded-md ${
@@ -43,7 +44,7 @@ export default function AboutMobile() {
     <div className="w-full px-5 text-white flex flex-col justify-center md:hidden">
       {/* Title */}
       <h2 className="text-center text-4xl font-bold mb-4">About US</h2>
-      <p className="mb-22">
+      <p className="">
         At Maestro Burger, we don’t just serve burgers we craft flavor that
         stops time. We started as a small food truck with a big dream, and grew
         into a brand built on quality, passion, and unforgettable taste. Every
@@ -58,7 +59,7 @@ export default function AboutMobile() {
       <Slider {...settings}>
         {/* ---------------- Slide 0 ---------------- */}
         <div className="">
-          <div className="flex flex-col  items-center justify-between pt-28 text-center">
+          <div className="flex flex-col  items-center justify-between pt-42  text-center">
         
              <motion.h3
               initial={{ y: 40, opacity: 0 }}
@@ -78,7 +79,7 @@ export default function AboutMobile() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="w-[370px] h-[550px] object-fill rounded-xl shadow-lg"
+              className="w-[370px] h-[550px] object-fill mt-24 rounded-xl shadow-lg"
             />
           </div>
         </div>
@@ -130,7 +131,7 @@ export default function AboutMobile() {
 
         {/* ---------------- Slide 2 (Icons + Stats) ---------------- */}
         <div>
-         <div className="grid grid-cols-2 sm:grid-cols-2 gap-10 place-items-center px-4">
+         <div className="grid grid-cols-2 sm:grid-cols-2 gap-10 mt-36 place-items-center px-4">
     {/* ICON ROW */}
     {[
       { img: icon1, title: "Premium Beef", text: "100% grass-fed Angus beef" },
@@ -192,8 +193,12 @@ export default function AboutMobile() {
         <p className="text-black text-sm mt-2">Morning buns</p>
       </motion.div>
         </div>
+        
       </Slider>
+      
       </div>
     </div>
   );
 }
+
+
